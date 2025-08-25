@@ -56,6 +56,7 @@ Name:Rabin R
 Ref no:212224230213
 
 server:
+~~~
 import socket
 from datetime import datetime
 s=socket.socket()
@@ -69,13 +70,17 @@ ack=c.recv(1024).decode()
 if ack:
  print(ack)
 c.close()
+~~~
+
 client:
+~~~
 import socket
 s=socket.socket()
 s.connect(('localhost',8000))
 print(s.getsockname())
 print(s.recv(1024).decode())
 s.send("acknowledgement recived from the server".encode())
+~~~
 server:
 <img width="1356" height="77" alt="image" src="https://github.com/user-attachments/assets/8cfa8549-292f-48d5-95a1-015844e4b79c" />
 client:
